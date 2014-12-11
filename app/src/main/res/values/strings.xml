@@ -6,5 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_listar">Listar</string>
     <string name="title_activity_activity2">Activity2</string>
+    <string name="title_activity_listarb">Listar para borrar</string>
+    <string name="title_activity_activityborrar">Activity Borrar</string>
 
 </resources>

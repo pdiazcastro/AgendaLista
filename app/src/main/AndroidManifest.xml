@@ -24,6 +24,14 @@
             android:name=".Activity2"
             android:label="@string/title_activity_activity2" >
         </activity>
+        <activity
+            android:name=".ListarB"
+            android:label="@string/title_activity_listarb" >
+        </activity>
+        <activity
+            android:name=".ActivityBorrar"
+            android:label="@string/title_activity_activityborrar" >
+        </activity>
     </application>
 
 </manifest>

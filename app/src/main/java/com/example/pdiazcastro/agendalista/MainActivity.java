@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
         final EditText phone = (EditText)findViewById(R.id.txtPhone);
         final Button add = (Button)findViewById(R.id.btnAdd);
         final Button list = (Button)findViewById(R.id.btnList);
+        final Button del = (Button)findViewById(R.id.btnDel);
         name.setBackgroundColor(Color.BLACK);
         phone.setBackgroundColor(Color.BLACK);
         name.setTextColor(Color.WHITE);
@@ -75,6 +76,22 @@ public class MainActivity extends Activity {
                     Intent intent = new Intent(MainActivity.this, Listar.class);
                     intent.putExtra("contacts", contacts);
                     startActivityForResult(intent, 1);
+                }
+            }
+        });
+
+        del.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if (contacts.size()==0)
+                {
+                    String msg ="No tienes contactos en tu lista para eliminar";
+                    showToast(msg);
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, ListarB.class);
+                    intent.putExtra("contacts", contacts);
+                    startActivityForResult(intent, 2);
                 }
             }
         });

@@ -38,6 +38,10 @@
                 android:id="@+id/btnAdd"
                 android:text="AÑADIR"
                 android:layout_marginTop="20dp"/>
+            <Button
+                android:id="@+id/btnDel"
+                android:text="BORRAR"
+                android:layout_marginTop="20dp"/>
             <TextView
                 android:id="@+id/line"
                 android:text="_____________________________________________________________"

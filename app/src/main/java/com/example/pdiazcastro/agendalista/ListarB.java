@@ -14,7 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import com.example.pdiazcastro.agendalista.R;
 import java.util.ArrayList;
-public class Listar extends ListActivity {
+public class ListarB extends ListActivity {
     ArrayList<Contact> contacts = new ArrayList<Contact>();
     Contact contact;
     @Override
@@ -27,7 +27,7 @@ public class Listar extends ListActivity {
     }
     public void onListItemClick(ListView parent, View v, int position, long id){
         contact = contacts.get(position);
-        Intent intent = new Intent(Listar.this, Activity2.class);
+        Intent intent = new Intent(ListarB.this, ActivityBorrar.class);
         intent.putExtra("contact", contact);
         startActivityForResult(intent, 1);
     }
@@ -40,10 +40,10 @@ public class Listar extends ListActivity {
             {
                 if (contacts.get(i).getName().toString().equalsIgnoreCase(contact.getName().toString()) && contacts.get(i).getPhone().toString().equalsIgnoreCase(contact.getPhone().toString()) )
                 {
-                    contacts.set(i, newContact);
-                    String msg = "GOT Object "+newContact.getName().toString()+"-->"+newContact.getPhone().toString();
+                    contacts.remove(i);
+                    String msg = "DEL Object "+newContact.getName().toString()+"-->"+newContact.getPhone().toString();
                     showToast(msg);
-                    Intent intent = new Intent(Listar.this, MainActivity.class);
+                    Intent intent = new Intent(ListarB.this, MainActivity.class);
                     intent.putExtra("contacts", contacts);
                     setResult(RESULT_OK, intent);
                     finish();
